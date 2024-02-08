@@ -94,7 +94,7 @@ const Signupp = () => {
       <div className="bg-[#F8FAFF] w-full md:w-[50%] h-full flex justify-center mt-4 ">
         <div className="w-full lg:w-[522px] h-full flex flex-col  justify-center text-start pl-4 pr-4 md:pl-12 md:pr-12 ">
           <div className="">
-            <h1 className="font-bold text-2xl md:text-3xl">Sign In</h1>
+            <h1 className="font-bold text-2xl md:text-3xl">Sign Up</h1>
             <p className="font-normal text-xs md:text-lg mt-2">
               Sign up to your account
             </p>
