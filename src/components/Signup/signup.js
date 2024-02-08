@@ -1,5 +1,6 @@
 import bg from "../../assets/login/Left-side.png";
 import logo from "../../assets/login/base-logo.png";
+import logoL from "../../assets/login/b-logo-line.png"
 import bLogo from "../../assets/login/BASE.png";
 import git from "../../assets/login/git.png";
 import tw from "../../assets/login/t.png";
@@ -56,16 +57,31 @@ const Signupp = () => {
   };
   return (
     <div className="w-full h-[100vh] flex flex-col md:flex-row ">
-      <div className="w-full md:w-[50%] h-[80px] md:h-full bg-blue-600 flex flex-col  md:justify-between  md:p-16">
-        <div className="hidden md:block w-full">
-          <img className="" src={logo} alt="" />
-        </div>
-        <div className=" md:hidden w-full h-full flex items-center pl-7 ">
-          <img className="w-[100px] h-[35px]" src={pLogo} alt="" />
-        </div>
-        <div className="hidden md:flex justify-center ">
-          <img className="w-[205px] h-[88px]" src={bLogo} alt="" />
-        </div>
+    <div className="relative w-full md:w-[50%] h-[80px] md:h-full bg-[#605BFF] md:bg-[#F8FAFF]  flex flex-col  md:justify-between  md:p-16 z-[10]">
+      
+      <div className="hidden md:block w-full h-full absolute top-0 left-0 z-[-5]">
+        <img className="w-[110%] h-full" src={bg} alt="" />
+      </div>
+
+      <div className="hidden md:block relative w-full">
+        <img className="w-[81px] h-[81px]" src={logo} alt="" />
+        <img
+          className="absolute top-[25px] left-[-2px] w-[84px]"
+          src={logoL}
+          alt=""
+        />
+      </div>
+
+      <div className=" md:hidden w-full h-full flex items-center pl-7 ">
+        <img className="w-[100px] h-[35px]" src={pLogo} alt="" />
+      </div>
+
+      <div className="hidden md:flex justify-center ">
+        <img className="w-[205px] h-[88px]" src={bLogo} alt="" />
+      </div>
+
+
+
         <div className="hidden md:flex justify-center">
           <div className="flex gap-10">
             <img className="w-[44px] h-[44px]" src={git} alt="" />
