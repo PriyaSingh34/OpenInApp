@@ -1,0 +1,168 @@
+import bg from "../../assets/login/Left-side.png";
+import logo from "../../assets/login/base-logo.png";
+import bLogo from "../../assets/login/BASE.png";
+import git from "../../assets/login/git.png";
+import tw from "../../assets/login/t.png";
+import ln from "../../assets/login/LN.png";
+import dis from "../../assets/login/discord.png";
+import gitD from "../../assets/login/git-d.png";
+import twD from "../../assets/login/t-d.png";
+import lnD from "../../assets/login/ln-d.png";
+import disD from "../../assets/login/dic-d.png";
+import google from "../../assets/login/google-icon 1.png";
+import apple from "../../assets/login/apple 1.png";
+import pLogo from "../../assets/login/phone-logo.png";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import InputControl from "../InputControl/InputControl";
+
+import { auth } from "../../firebase";
+
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+
+const Signupp = () => {
+  const navigate = useNavigate();
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    pass: "",
+  });
+  const [errorMsg, setErrorMsg] = useState("");
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+
+  const handleSubmission = () => {
+    console.log("Signup button clicked"); // Add this line
+    if (!values.name || !values.email || !values.pass) {
+      setErrorMsg("Fill all fields");
+      return;
+    }
+    setErrorMsg("");
+
+    // setSubmitButtonDisabled(true);
+    createUserWithEmailAndPassword(auth, values.email, values.pass)
+      .then(async (res) => {
+        // setSubmitButtonDisabled(false);
+        const user = res.user;
+        await updateProfile(user, {
+          displayName: values.name,
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        // setSubmitButtonDisabled(false);
+        console.log(err);
+        setErrorMsg(err.message);
+      });
+  };
+  return (
+    <div className="w-full h-[100vh] flex flex-col md:flex-row ">
+      <div className="w-full md:w-[50%] h-[80px] md:h-full bg-blue-600 flex flex-col  md:justify-between  md:p-16">
+        <div className="hidden md:block w-full">
+          <img className="" src={logo} alt="" />
+        </div>
+        <div className=" md:hidden w-full h-full flex items-center pl-7 ">
+          <img className="w-[100px] h-[35px]" src={pLogo} alt="" />
+        </div>
+        <div className="hidden md:flex justify-center ">
+          <img className="w-[205px] h-[88px]" src={bLogo} alt="" />
+        </div>
+        <div className="hidden md:flex justify-center">
+          <div className="flex gap-10">
+            <img className="w-[44px] h-[44px]" src={git} alt="" />
+            <img className="w-[44px] h-[44px]" src={tw} alt="" />
+            <img className="w-[44px] h-[44px]" src={ln} alt="" />
+            <img className="w-[44px] h-[44px]" src={dis} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="bg-[#F8FAFF] w-full md:w-[50%] h-full flex justify-center mt-4 ">
+        <div className="w-full lg:w-[522px] h-full flex flex-col  justify-center text-start pl-4 pr-4 md:pl-12 md:pr-12 ">
+          <div className="">
+            <h1 className="font-bold text-2xl md:text-3xl">Sign In</h1>
+            <p className="font-normal text-xs md:text-lg mt-2">
+              Sign up to your account
+            </p>
+          </div>
+
+          <div className="flex gap-5 mt-6">
+            <div className=" h-[32px] w-full md:h-[35px] rounded-lg bg-white flex justify-center items-center gap-2">
+              <img src={google} alt="" />
+              <p className="text-[#858585] text-xs md:text-sm">
+                Sign up with Google
+              </p>
+            </div>
+
+            <div className="h-[32px] w-full md:h-[35px] rounded-lg bg-white flex justify-center items-center gap-2">
+              <img src={apple} alt="" />
+              <p className="text-[#858585] text-xs  md:text-sm">
+                Sign up with Apple
+              </p>
+            </div>
+          </div>
+
+          <div className=" bg-white rounded-lg flex flex-col justify-start p-2 md:p-10">
+            <div className="">
+              <InputControl
+                label="Name"
+                className="w-full h-[44px] bg-[#EAEAEA] rounded-2xl text-black  pl-2"
+                placeholder="Enter your name"
+                onChange={(event) =>
+                  setValues((prev) => ({ ...prev, name: event.target.value }))
+                }
+              />
+              
+            </div>
+            <div className="mt-3">
+              <InputControl
+                label="Email"
+                className="w-full h-[44px] bg-[#EAEAEA] rounded-lg text-black  pl-2"
+                placeholder="Enter email address"
+                onChange={(event) =>
+                  setValues((prev) => ({ ...prev, email: event.target.value }))
+                }
+              />
+              
+            </div>
+            <div className="mt-3">
+              <InputControl
+                label="Password"
+                className="w-full  h-[44px] bg-[#EAEAEA] rounded-lg text-black  pl-2"
+                placeholder="Enter password"
+                onChange={(event) =>
+                  setValues((prev) => ({ ...prev, pass: event.target.value }))
+                }
+              />
+             
+            </div>
+            <b className="text-red-600 mt-4">{errorMsg}</b>
+            
+
+            <button
+              onClick={handleSubmission}
+              className="w-full h-[44px] bg-[#605BFF] flex justify-center text-white items-center text-base md:text-lg font-semibold rounded-lg mt-4 "
+            >
+              Sign In
+            </button>
+          </div>
+          <div className="text-center flex flex-col md:flex-row md:gap-2 justify-center">
+            <p className="font-normal text-base text-[#858585]">
+              Already have an account?
+            </p>
+            <p className="font-normal text-base text-[#346BD4]">
+              <Link to="/">Login here</Link>
+            </p>
+          </div>
+
+          <div className="md:hidden flex justify-center items-center gap-6 mt-6">
+            <img className="w-[28px] h-[28px]" src={gitD} alt="" />
+            <img className="w-[28px] h-[28px]" src={twD} alt="" />
+            <img className="w-[28px] h-[28px]" src={lnD} alt="" />
+            <img className="w-[28px] h-[28px]" src={disD} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Signupp;
