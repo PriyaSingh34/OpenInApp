@@ -90,7 +90,7 @@ const Login = () => {
             </p>
           </div>
 
-          <div className="flex gap-5 mt-6">
+          <div className="flex  mt-6">
             <div className=" h-[32px] w-full md:h-[35px] rounded-lg bg-white flex justify-center items-center gap-2">
               <img src={google} alt="" />
               <p className="text-[#858585] text-xs md:text-sm">
