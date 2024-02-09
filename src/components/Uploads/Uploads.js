@@ -23,7 +23,7 @@ import React, {useState} from 'react'
 
   return (
     <div className='w-full pl-10 pr-10 overflow-auto'>
-      <p className='text-3xl font-semibold text-start'>Uploads</p>  
+      <p className='text-xl font-semibold text-start md:text-3xl'>Uploads</p>  
       <div className='w-[1065px] bg-[#F5F5F5]  rounded-lg mt-10 '>
       <table className="mt-5 mb-[100px]">
   <thead>
@@ -31,7 +31,7 @@ import React, {useState} from 'react'
       <th className='text-lg font-normal w-[80px]'>Sl No.</th>
       <th className='text-lg font-normal w-[250px]'>Links</th>
       <th className='text-lg font-normal w-[250px]'>Prefix</th>
-      <th className='text-lg font-normal w-[200px]'>Add Tags</th>
+      <th className='text-lg font-normal w-[250px]'>Add Tags</th>
       <th className='text-lg font-normal w-[300px]'>Selected Tags</th>
     </tr>
   </thead>
@@ -41,7 +41,7 @@ import React, {useState} from 'react'
         <td className='text-lg font-normal w-[80px] text-center'>{index + 1}</td>
         <td className='text-lg font-normal w-[250px] text-center'>{file.name}</td>
         <td className='text-lg font-normal w-[250px] text-center'>prefixsample</td>
-        <td className='text-lg font-normal w-[200px] text-center'>
+        <td className='text-lg font-normal w-[250px] text-center'>
           <label htmlFor={`tags-${index}`}>Select Tags:</label>
           <select
             id={`tags-${index}`}

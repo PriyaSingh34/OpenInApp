@@ -52,7 +52,7 @@ const Login = () => {
       <div className="relative w-full md:w-[50%] h-[80px] md:h-full bg-[#605BFF] md:bg-[#F8FAFF]  flex flex-col  md:justify-between  md:p-16 z-[10]">
         
         <div className="hidden md:block w-full h-full absolute top-0 left-0 z-[-5]">
-          <img className="w-[110%] h-full" src={bg} alt="" />
+          <img className="w-full h-full" src={bg} alt="" />
         </div>
 
         <div className="hidden md:block relative w-full">

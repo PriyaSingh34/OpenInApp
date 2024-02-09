@@ -60,7 +60,7 @@ const Signupp = () => {
     <div className="relative w-full md:w-[50%] h-[80px] md:h-full bg-[#605BFF] md:bg-[#F8FAFF]  flex flex-col  md:justify-between  md:p-16 z-[10]">
       
       <div className="hidden md:block w-full h-full absolute top-0 left-0 z-[-5]">
-        <img className="w-[110%] h-full" src={bg} alt="" />
+        <img className="w-full h-full" src={bg} alt="" />
       </div>
 
       <div className="hidden md:block relative w-full">
@@ -91,7 +91,7 @@ const Signupp = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F8FAFF] w-full md:w-[50%] h-full flex justify-center mt-4 ">
+      <div className="bg-[#F8FAFF] w-full md:w-[50%] h-full flex justify-center ">
         <div className="w-full lg:w-[522px] h-full flex flex-col  justify-center text-start pl-4 pr-4 md:pl-12 md:pr-12 ">
           <div className="">
             <h1 className="font-bold text-2xl md:text-3xl">Sign Up</h1>
@@ -100,7 +100,7 @@ const Signupp = () => {
             </p>
           </div>
 
-          <div className="flex gap-5 mt-6">
+          <div className="flex gap-5 mt-4">
             <div className=" h-[32px] w-full md:h-[35px] rounded-lg bg-white flex justify-center items-center gap-2">
               <img src={google} alt="" />
               <p className="text-[#858585] text-xs md:text-sm">
@@ -116,7 +116,7 @@ const Signupp = () => {
             </div>
           </div>
 
-          <div className=" bg-white rounded-lg flex flex-col justify-start p-2 md:p-10">
+          <div className=" bg-white rounded-lg flex flex-col justify-start p-2 md:p-6">
             <div className="">
               <InputControl
                 label="Name"
