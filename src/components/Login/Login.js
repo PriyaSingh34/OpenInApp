@@ -69,7 +69,7 @@ const Login = () => {
         </div>
 
         <div className="hidden md:flex justify-center ">
-          <img className="w-[205px] h-[88px]" src={bLogo} alt="" />
+          <img className="w-[220px] h-[65px]" src={bLogo} alt="" />
         </div>
 
         <div className="hidden md:flex justify-center">
