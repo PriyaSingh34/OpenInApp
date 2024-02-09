@@ -19,7 +19,7 @@ const Upload = () => {
     <div className='w-full h-full flex flex-col gap-10 lg:justify-center items-center mt-[50px] lg:mt-0'>
 
         <div className='w-[310px] h-[350px] lg:w-[580px] lg:h-[370px] bg-[#FFFFFF] p-4 flex flex-col md:justify-center items-center'>
-           <div className=' w-full h-full border border-dotted rounded-lg flex flex-col justify-center items-center '>
+           <div className=' w-full h-full border-2 border-dotted border-gray-300 rounded-lg flex flex-col justify-center items-center '>
             <img className='w-[36px] h-[36px]' src={msex} alt="" />
 
                         <div {...getRootProps()}>
