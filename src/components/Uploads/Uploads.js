@@ -72,7 +72,7 @@ const Uploads = ({ uploadedFiles }) => {
                         tags[index].map((tag, tagIndex) => (
                           <div
                             key={tagIndex}
-                            className="w-[70px] h-[28px] bg-[#605BFF] rounded-md flex justify-center items-center gap-2 m-1"
+                            className="w-[85px] h-[28px] bg-[#605BFF] rounded-md flex justify-center items-center gap-2 m-1 p-1"
                           >
                             <p className="text-white w-[100px]">{tag}</p>
                             <p
